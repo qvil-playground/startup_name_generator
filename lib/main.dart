@@ -83,6 +83,12 @@ class RandomWordsState extends State<RandomWords> {
                   pair.asPascalCase,
                   style: _biggerFont,
                 ),
+                trailing: Icon(Icons.close),
+                onTap: () {
+                  setState(() {
+                    _saved.remove(pair);
+                  });
+                },
               );
             },
           );
@@ -105,5 +111,5 @@ class RandomWordsState extends State<RandomWords> {
 
 class RandomWords extends StatefulWidget {
   @override
-  RandomWordsState createState() => RandomWordsState();
+  RandomWordsState createState() => new RandomWordsState();
 }
